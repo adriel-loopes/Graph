@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/adriel-loopes/Graph/issues"
   },
-  "homepage": "https://github.com/adriel-loopes/Graph#readme",
-  "dependencies": {
-    "express": "^4.21.1"
-  }
+  "homepage": "https://github.com/adriel-loopes/Graph#readme"
 }
