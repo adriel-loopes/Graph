@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: registry.tools.havan.com.br/devops/library/graph:1.0.0.1  # Altere para o repositório correto
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  name: graph
+  type: NodePort
+  port: 3000
+  nodePort: 3000 # Pode ser qualquer porta disponível no intervalo 30000-32767
+
+ingress:
+  enabled: true
+  # Valores adicionais de configuração do ingress
+
+serviceAccount:
+  create: true
+  name: ""
+  automount: true
+
+fullnameOverride: ""
+nameOverride: ""
+
+# Configuração do Autoscaling
+autoscaling:
+  enabled: true  # Habilita o autoscaling
+  minReplicas: 1  # Número mínimo de réplicas
+  maxReplicas: 3  # Número máximo de réplicas
+  targetCPUUtilizationPercentage: 80  # Utilização alvo de CPU para o autoscaling
+
+# Configuração para acessar o Docker Registry privado
+imagePullSecrets:
+  - name: registry.havan.com.br  # Nome do segredo criado para o registry privado
