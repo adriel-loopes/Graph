@@ -1,7 +1,6 @@
 {
   "name": "graph",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -20,5 +19,7 @@
   "homepage": "https://github.com/adriel-loopes/Graph#readme",
   "dependencies": {
     "express": "^4.21.1"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
