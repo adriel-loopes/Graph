@@ -11,5 +11,9 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "graph.fullname" . }}:{{ .Values.service.port }}']
+      args:
+        - '--timeout=10'
+        - '--tries=3'
+        - '--spider'
+        - "http://{{ include "my-previsao.fullname" . }}:{{ .Values.service.port }}"
   restartPolicy: Never
