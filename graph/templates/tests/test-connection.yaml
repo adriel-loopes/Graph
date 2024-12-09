@@ -15,5 +15,5 @@ spec:
         - '--timeout=10'
         - '--tries=3'
         - '--spider'
-        - "http://{{ include "my-previsao.fullname" . }}:{{ .Values.service.port }}"
+        - "http://{{ include "graph.fullname" . }}:{{ .Values.service.port }}"
   restartPolicy: Never
