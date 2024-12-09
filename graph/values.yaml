@@ -1,0 +1,33 @@
+# Configuração do serviço
+service:
+  port: 3000  # Porta do serviço
+
+# Configuração do ServiceAccount
+serviceAccount:
+  create: true
+  name: graph-service-account
+  annotations: 
+    example.com/annotation: "value"
+  automount: true
+
+# Configurações de Deploy
+deployment:
+  replicas: 1
+  image:
+    repository: "registry.tools.havan.com.br/devops/graph"
+    tag: "latest"
+    pullPolicy: Always
+
+# Configurações de Ingress
+ingress:
+  enabled: true
+  hosts:
+    - host: "registry.tools.havan.com.br"
+      paths:
+        - "/"
+
+# Configurações da imagem do container
+image:
+  repository: "registry.tools.havan.com.br/devops/graph"
+  tag: "latest"
+  pullPolicy: IfNotPresent
